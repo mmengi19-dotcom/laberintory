@@ -7,6 +7,10 @@ func _ready() -> void:
 	gravity_scale = 0.0
 
 func _physics_process(_delta: float) -> void:
+	# =========================
+	# ESTA ES UNA ANOTACION PARA QUE EN UN FUTURO SEPAMOS QUE "KLEIN COMEME LOS HUEVOS"
+	# =========================
+
 
 	# =========================
 	# TECLADO
