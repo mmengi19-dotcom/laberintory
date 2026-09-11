@@ -5,6 +5,7 @@ extends Control
 @onready var btn_instructions = $VBoxContainer/BtnInstructions
 @onready var btn_quit = $VBoxContainer/BtnQuit
 
+
 func _ready():
 	btn_start.pressed.connect(_on_start_pressed)
 	btn_instructions.pressed.connect(_on_instructions_pressed)
