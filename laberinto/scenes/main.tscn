@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bvftnm52xo46k" path="res://scripts/goal.gd" id="5_choun"]
 [ext_resource type="Texture2D" uid="uid://dwh1jonrtp6fw" path="res://assets/Goal.png" id="6_tipki"]
 [ext_resource type="Script" uid="uid://bswlx0tlg71sa" path="res://scripts/ui.gd" id="6_ya4ey"]
-[ext_resource type="Texture2D" uid="uid://d152rk0cj1dx1" path="res://assets/wp2765610.jpg" id="7_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://do0accfd1myfw" path="res://assets/Pruebafondo4.jpg" id="8_tipki"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x15ge"]
 radius = 25.0
@@ -114,10 +114,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Menu Principal"
 
+[node name="LevelLabel" type="Label" parent="UI" unique_id=601289052]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="Wp2765610" type="Sprite2D" parent="." unique_id=1141937355]
 z_index = -1
-position = Vector2(2981, 1087)
+position = Vector2(2981, 1088)
 scale = Vector2(6.7511725, 6.307617)
-texture = ExtResource("7_o6xl0")
+texture = ExtResource("8_tipki")
 
 [connection signal="body_entered" from="Goal" to="Goal" method="_on_body_entered"]

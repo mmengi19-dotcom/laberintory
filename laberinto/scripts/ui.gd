@@ -4,11 +4,17 @@ extends CanvasLayer
 @onready var pause_menu = $PauseMenu
 @onready var btn_resume = $PauseMenu/VBoxContainer/BtnResume
 @onready var btn_main_menu = $PauseMenu/VBoxContainer/BtnMainMenu
+@onready var level_label = $LevelLabel
+
+var current_level: int = 1
 
 func _ready():
 	pause_btn.pressed.connect(_on_pause_pressed)
 	btn_resume.pressed.connect(_on_resume_pressed)
 	btn_main_menu.pressed.connect(_on_main_menu_pressed)
+	
+	# Inicializamos el texto en el nivel 1
+	_update_level_display()
 
 func _on_pause_pressed():
 	print("Pausando...")
@@ -26,3 +32,17 @@ func _on_main_menu_pressed():
 	print("Yendo al menú principal...")
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+# Función para avanzar de nivel
+func next_level():
+	current_level += 1
+	_update_level_display()
+
+# Función para reiniciar si pierde o vuelve a empezar
+func reset_level():
+	current_level = 1
+	_update_level_display()
+
+func _update_level_display():
+	if level_label:
+		level_label.text = "Nivel %d" % current_level

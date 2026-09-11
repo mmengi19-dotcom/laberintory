@@ -1,11 +1,21 @@
 extends TileMapLayer
 
-const WIDTH = 17
-const HEIGHT = 27
+# Dimensiones base iniciales
+const BASE_WIDTH: int = 11
+const BASE_HEIGHT: int = 19
+
+# Dimensiones activas en el nivel actual
+var width: int = BASE_WIDTH
+var height: int = BASE_HEIGHT
+var extraPath: int = 9
+
+# Límite máximo opcional para que no sea inmanejable en móviles
+const MAX_WIDTH: int = 33
+const MAX_HEIGHT: int = 53
+const MAX_PATH: int = 75
 
 @export var source_id = 0
 @export var atlas_coords = Vector2i(0, 0)
-
 
 func _ready():
 	generate_maze()
@@ -16,9 +26,9 @@ func _ready():
 # ============================================================
 
 func add_extra_paths(grid):
-	for i in range(75):#EN 25 FUNCIONA BIEN
-		var x = randi_range(1, WIDTH - 2)
-		var y = randi_range(1, HEIGHT - 2)
+	for i in range(extraPath):#EN 25 FUNCIONA BIEN
+		var x = randi_range(1, width - 2)
+		var y = randi_range(1, height - 2)
 
 		if grid[x][y] == 1:
 
@@ -73,10 +83,10 @@ func find_farthest_cell(grid, start):
 			var next = current + dir
 
 			# Comprobar límites
-			if next.x < 0 or next.x >= WIDTH:
+			if next.x < 0 or next.x >= width:
 				continue
 
-			if next.y < 0 or next.y >= HEIGHT:
+			if next.y < 0 or next.y >= height:
 				continue
 
 			# No atravesar paredes
@@ -106,21 +116,27 @@ func generate_maze():
 
 	clear()
 
+	# 1. Obtener nivel actual desde la UI
+	var ui = get_parent().get_node_or_null("UI")
+	var level = ui.current_level if ui else 1
 
+	# 2. Calcular incremento: +2 cada 4 niveles
+	var growth = int((level - 1) / 4) * 2
+
+	width = mini(BASE_WIDTH + growth, MAX_WIDTH)
+	height = mini(BASE_HEIGHT + growth, MAX_HEIGHT)
+	
+	var growthExtraPath = int((level - 1) / 4) * 4
+	extraPath=mini(9+growthExtraPath,75)
+	print("pasillos %d",extraPath)
 	# ========================================================
 	# 1. CREAR MATRIZ
 	# ========================================================
-
-	# 1 = pared
-	# 0 = camino
-
 	var grid = []
 
-	for x in range(WIDTH):
-
+	for x in range(width):
 		grid.append([])
-
-		for y in range(HEIGHT):
+		for y in range(height):
 			grid[x].append(1)
 
 
@@ -162,8 +178,8 @@ func generate_maze():
 			var nx = current.x + dir.x
 			var ny = current.y + dir.y
 
-			if nx > 0 and nx < WIDTH - 1:
-				if ny > 0 and ny < HEIGHT - 1:
+			if nx > 0 and nx < width - 1:
+				if ny > 0 and ny < height - 1:
 
 					if grid[nx][ny] == 1:
 						neighbors.append(Vector2i(nx, ny))
@@ -229,9 +245,9 @@ func generate_maze():
 	# 5. PINTAR LAS PAREDES
 	# ========================================================
 
-	for x in range(WIDTH):
+	for x in range(width):
 
-		for y in range(HEIGHT):
+		for y in range(height):
 
 			if grid[x][y] == 1:
 
@@ -250,9 +266,13 @@ func generate_maze():
 
 	if ball:
 
-		ball.global_position = to_global(
-			map_to_local(start)
-		)
+		var start_pos = to_global(map_to_local(start))
+
+		# Si el script de la bola tiene la función de reinicio, la frena y reubica
+		if ball.has_method("reset_to_start"):
+			ball.reset_to_start(start_pos)
+		else:
+			ball.global_position = start_pos
 
 
 		# ====================================================
@@ -277,12 +297,12 @@ func generate_maze():
 
 			camera.limit_right = (
 				global_position.x
-				+ WIDTH * tile_size.x
+				+ width * tile_size.x
 			)
 
 			camera.limit_bottom = (
 				global_position.y
-				+ HEIGHT * tile_size.y
+				+ height * tile_size.y
 			)
 
 
