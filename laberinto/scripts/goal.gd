@@ -5,4 +5,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Ball":
 		print("¡Nivel completado!")
 		# Reinicia la escena automáticamente para probar otra vez
-		get_tree().reload_current_scene()
+		get_tree().call_deferred("reload_current_scene") 
+		#Se puso un call_deferred pq lanzaba error al intentar recargar la escena 
+		#mientras se se calculaban las fisicas.
