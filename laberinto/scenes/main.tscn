@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://do0accfd1myfw" path="res://assets/Pruebafondo4.jpg" id="8_tipki"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x15ge"]
-radius = 25.0
+radius = 30.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tefeu"]
 texture = ExtResource("3_tefeu")
