@@ -1,7 +1,7 @@
 extends TileMapLayer
 
-const WIDTH = 31
-const HEIGHT = 55
+const WIDTH = 17
+const HEIGHT = 27
 
 @export var source_id = 0
 @export var atlas_coords = Vector2i(0, 0)

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cwn3jtjbkl6vo" path="res://assets/ParedPrueba1.png" id="3_tefeu"]
 [ext_resource type="Script" uid="uid://dxtpsow42i3hj" path="res://scripts/maze.gd" id="4_85g3d"]
 [ext_resource type="Script" uid="uid://bvftnm52xo46k" path="res://scripts/goal.gd" id="5_choun"]
+[ext_resource type="Texture2D" uid="uid://dwh1jonrtp6fw" path="res://assets/Goal.png" id="6_tipki"]
 [ext_resource type="Script" uid="uid://bswlx0tlg71sa" path="res://scripts/ui.gd" id="6_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://d152rk0cj1dx1" path="res://assets/wp2765610.jpg" id="7_o6xl0"]
 
@@ -22,8 +23,8 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tefeu")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k0akp"]
-radius = 30.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmc68"]
+size = Vector2(64, 64)
 
 [node name="Main" type="Node2D" unique_id=1254025537]
 
@@ -56,16 +57,10 @@ script = ExtResource("5_choun")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=97772169]
-shape = SubResource("CircleShape2D_k0akp")
+shape = SubResource("RectangleShape2D_tmc68")
 
-[node name="Label" type="Label" parent="Goal" unique_id=1970244709]
-offset_left = -54.0
-offset_top = -24.0
-offset_right = 54.0
-offset_bottom = 31.0
-theme_override_colors/font_color = Color(0.97345346, 0.6105723, 7.70092e-07, 1)
-theme_override_font_sizes/font_size = 40
-text = "META"
+[node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=391070800]
+texture = ExtResource("6_tipki")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1844704459]
 script = ExtResource("6_ya4ey")
