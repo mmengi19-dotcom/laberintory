@@ -18,6 +18,7 @@ config/icon="uid://cq2vicwty2eu"
 [autoload]
 
 GameManager="*uid://boxvfd5pmlron"
+GameTimer="*uid://cst33p0ydc6jj"
 
 [display]
 

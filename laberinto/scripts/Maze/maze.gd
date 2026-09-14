@@ -16,7 +16,7 @@ const MAX_PATH: int = 75
 
 @export var source_id = 0
 @export var atlas_coords = Vector2i(0, 0)
-@onready var timer = get_parent().get_node("UI/TimerLabel")
+
 
 func _ready():
 	GameManager.level_changed.connect(_on_level_changed)
