@@ -12,7 +12,7 @@ func _ready():
 	btn_quit.pressed.connect(_on_quit_pressed)
 
 func _on_start_pressed():
-	# Carga la escena del juego 
+	GameManager.start_game()
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 func _on_instructions_pressed():

@@ -19,7 +19,11 @@ const MAX_PATH: int = 75
 @onready var timer = get_parent().get_node("UI/TimerLabel")
 
 func _ready():
-	timer.start_timer()
+	GameManager.level_changed.connect(_on_level_changed)
+	generate_maze()
+
+func _on_level_changed(new_level: int):
+	print("Generando laberinto para el nivel: ", new_level)
 	generate_maze()
 
 
@@ -119,8 +123,7 @@ func generate_maze():
 	clear()
 
 	# 1. Obtener nivel actual desde la UI
-	var ui = get_parent().get_node_or_null("UI")
-	var level = ui.current_level if ui else 1
+	var level = GameManager.current_level
 
 	# 2. Calcular incremento: +2 cada 4 niveles
 	var growth = int((level - 1) / 4) * 2

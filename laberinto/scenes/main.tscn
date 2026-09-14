@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dbjo4ctt37gte"]
 
+[ext_resource type="Script" uid="uid://c8ru2jxt68x5n" path="res://scripts/Main.gd" id="1_choun"]
 [ext_resource type="Script" uid="uid://cr5jsq1d12p8" path="res://scripts/ball.gd" id="1_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cfebegeywe5oa" path="res://assets/Pelota.png" id="2_tefeu"]
 [ext_resource type="Texture2D" uid="uid://cwn3jtjbkl6vo" path="res://assets/ParedPrueba1.png" id="3_tefeu"]
@@ -28,6 +29,7 @@ sources/0 = SubResource("TileSetAtlasSource_tefeu")
 size = Vector2(64, 64)
 
 [node name="Main" type="Node2D" unique_id=1254025537]
+script = ExtResource("1_choun")
 
 [node name="Ball" type="RigidBody2D" parent="." unique_id=2009874601]
 position = Vector2(380, 617)
