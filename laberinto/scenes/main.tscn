@@ -10,6 +10,8 @@
 [ext_resource type="Script" uid="uid://bswlx0tlg71sa" path="res://scripts/UI/ui.gd" id="6_ya4ey"]
 [ext_resource type="Script" uid="uid://dee13a0cycdoa" path="res://scripts/UI/timer.gd" id="8_85g3d"]
 [ext_resource type="Texture2D" uid="uid://do0accfd1myfw" path="res://assets/Pruebafondo4.jpg" id="8_tipki"]
+[ext_resource type="Script" uid="uid://bp0n8m3lvcyss" path="res://scripts/Gameplay/key.gd" id="11_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://dera5d66raen" path="res://assets/key.png" id="12_eb6dy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x15ge"]
 radius = 30.0
@@ -27,6 +29,9 @@ sources/0 = SubResource("TileSetAtlasSource_tefeu")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmc68"]
 size = Vector2(64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k0akp"]
+radius = 20.0
 
 [node name="Main" type="Node2D" unique_id=1254025537]
 script = ExtResource("1_choun")
@@ -135,5 +140,16 @@ z_index = -1
 position = Vector2(3155.9998, 1109)
 scale = Vector2(6.7511725, 6.307617)
 texture = ExtResource("8_tipki")
+
+[node name="Key" type="Area2D" parent="." unique_id=975756902]
+position = Vector2(1, 2)
+script = ExtResource("11_ya4ey")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key" unique_id=2073848226]
+shape = SubResource("CircleShape2D_k0akp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Key" unique_id=410922592]
+texture = ExtResource("12_eb6dy")
 
 [connection signal="body_entered" from="Goal" to="Goal" method="_on_body_entered"]

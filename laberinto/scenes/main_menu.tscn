@@ -33,7 +33,7 @@ theme_override_font_sizes/font_size = 40
 text = "LABERINTO"
 horizontal_alignment = 1
 
-[node name="BtnStart" type="Button" parent="VBoxContainer" unique_id=257583258]
+[node name="BtnTimeTrial" type="Button" parent="VBoxContainer" unique_id=257583258]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Empezar"
@@ -47,6 +47,12 @@ text = "INSTRUCCIONES"
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "Salir"
+
+[node name="BtnChallenge" type="Button" parent="VBoxContainer" unique_id=2067832958]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Desafio
+"
 
 [node name="InstructionsDialog" type="AcceptDialog" parent="." unique_id=1939041970]
 oversampling_override = 1.0

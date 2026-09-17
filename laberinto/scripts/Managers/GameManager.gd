@@ -2,7 +2,7 @@ extends Node
 
 signal state_changed(new_state)
 signal level_changed(new_level)
-
+signal key_collected
 
 enum GameState {
 	MENU,
@@ -16,11 +16,27 @@ enum GameState {
 
 var current_state: GameState = GameState.MENU
 var current_level: int = 1
+var has_key: bool = false
 
+enum GameMode {
+	TIME_TRIAL,  # Contrarreloj 
+	CHALLENGE    # Desafío (con portales, enemigos y mecánicas extra)
+}
 
-func start_game() -> void:
+var current_mode: GameMode = GameMode.TIME_TRIAL
+
+func start_game(mode: GameMode = GameMode.TIME_TRIAL) -> void:
+	current_mode = mode
 	current_level = 1
-	GameTimer.start()
+	has_key = false # Reiniciamos la llave
+	
+	# El reloj solo corre si estamos en Contrarreloj
+	if current_mode == GameMode.TIME_TRIAL:
+		GameTimer.start()
+	else:
+		GameTimer.stop()
+		GameTimer.reset()
+		
 	change_state(GameState.PLAYING)
 
 
@@ -35,7 +51,14 @@ func set_level(new_level: int) -> void:
 
 
 func next_level() -> void:
+	has_key = false # Cada nuevo nivel requiere una nueva llave
 	set_level(current_level + 1)
+
+
+func collect_key() -> void:
+	has_key = true
+	key_collected.emit()
+	print("¡Llave recogida!")
 
 
 func pause_game() -> void:
