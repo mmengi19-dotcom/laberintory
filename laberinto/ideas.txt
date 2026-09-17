@@ -1,0 +1,20 @@
+modo oscuridad
+	-mapa con pequeña distancia visual
+	
+modo desafio
+	-habilidades
+		.atravesar paredes
+		.velocidad
+	-llaves
+	-enemigos(estilo pacman/bomberman)
+	-portales(tp)
+	-tp random
+
+modo contrareloj
+	
+modo cronometro(actual)
+
+tienda(con monedas de desafio / anuncios)
+	-skins
+	-mejoras de habilidades
+	-¿arma tu skin???
