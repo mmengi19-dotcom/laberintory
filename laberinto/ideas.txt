@@ -17,4 +17,4 @@ modo cronometro(actual)
 tienda(con monedas de desafio / anuncios)
 	-skins
 	-mejoras de habilidades
-	-¿arma tu skin???
+	
