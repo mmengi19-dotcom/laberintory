@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cwn3jtjbkl6vo" path="res://assets/ParedPrueba1.png" id="3_tefeu"]
 [ext_resource type="Script" uid="uid://dxtpsow42i3hj" path="res://scripts/Maze/maze.gd" id="4_85g3d"]
 [ext_resource type="Script" uid="uid://bvftnm52xo46k" path="res://scripts/Gameplay/goal.gd" id="5_choun"]
-[ext_resource type="Texture2D" uid="uid://dwh1jonrtp6fw" path="res://assets/Goal.png" id="6_tipki"]
+[ext_resource type="Texture2D" uid="uid://p82h5a28l7cg" path="res://assets/ParedPrueba2.png" id="5_jkv2x"]
 [ext_resource type="Script" uid="uid://bswlx0tlg71sa" path="res://scripts/UI/ui.gd" id="6_ya4ey"]
 [ext_resource type="Script" uid="uid://dee13a0cycdoa" path="res://scripts/UI/timer.gd" id="8_85g3d"]
 [ext_resource type="Texture2D" uid="uid://do0accfd1myfw" path="res://assets/Pruebafondo4.jpg" id="8_tipki"]
@@ -70,7 +70,7 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_tmc68")
 
 [node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=391070800]
-texture = ExtResource("6_tipki")
+texture = ExtResource("5_jkv2x")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1844704459]
 script = ExtResource("6_ya4ey")
