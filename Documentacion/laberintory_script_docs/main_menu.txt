@@ -1,0 +1,32 @@
+=======================================================
+main_menu.gd
+=======================================================
+
+UBICACIÓN
+---------
+laberinto/scripts/main_menu.gd
+
+RESPONSABILIDAD
+----------------
+Gestiona las acciones del menú principal y el inicio de la partida.
+
+FUNCIONES
+---------
+_ready()
+----------------------------------------
+Inicializa el componente y realiza las conexiones o configuraciones iniciales.
+
+_on_start_pressed()
+----------------------------------------
+Inicia la partida desde el menú principal.
+
+_on_instructions_pressed()
+----------------------------------------
+Implementa la lógica específica de esta función.
+
+_on_quit_pressed()
+----------------------------------------
+Implementa la lógica específica de esta función.
+
+OBSERVACIONES
+-------------

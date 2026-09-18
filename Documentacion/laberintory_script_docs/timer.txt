@@ -1,0 +1,25 @@
+=======================================================
+timer.gd
+=======================================================
+
+UBICACIÓN
+---------
+laberinto/scripts/UI/timer.gd
+
+RESPONSABILIDAD
+----------------
+Gestiona la lógica correspondiente a este componente.
+
+FUNCIONES
+---------
+_ready()
+----------------------------------------
+Inicializa el componente y realiza las conexiones o configuraciones iniciales.
+
+_on_time_changed(new_time: float)
+----------------------------------------
+Actualiza la representación visual del tiempo.
+
+OBSERVACIONES
+-------------
+Se relaciona con el temporizador global GameTimer.

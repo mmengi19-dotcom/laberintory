@@ -1,0 +1,24 @@
+=======================================================
+Main.gd
+=======================================================
+
+UBICACIÓN
+---------
+laberinto/scripts/Main.gd
+
+RESPONSABILIDAD
+----------------
+Coordina la escena principal y conecta el objetivo con GameManager.
+
+FUNCIONES
+---------
+_ready()
+----------------------------------------
+Inicializa el componente y realiza las conexiones o configuraciones iniciales.
+
+_on_level_completed()
+----------------------------------------
+Reacciona cuando se completa un nivel.
+
+OBSERVACIONES
+-------------

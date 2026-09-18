@@ -1,0 +1,24 @@
+=======================================================
+goal.gd
+=======================================================
+
+UBICACIÓN
+---------
+laberinto/scripts/Gameplay/goal.gd
+
+RESPONSABILIDAD
+----------------
+Detecta cuándo la pelota llega al objetivo y emite el evento correspondiente.
+
+SEÑALES
+-------
+level_completed
+
+FUNCIONES
+---------
+_on_body_entered(body: Node2D)
+----------------------------------------
+Reacciona cuando un cuerpo entra en el área de detección.
+
+OBSERVACIONES
+-------------

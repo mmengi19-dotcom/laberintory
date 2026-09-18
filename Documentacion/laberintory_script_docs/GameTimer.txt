@@ -1,0 +1,40 @@
+=======================================================
+GameTimer.gd
+=======================================================
+
+UBICACIÓN
+---------
+laberinto/scripts/Managers/GameTimer.gd
+
+RESPONSABILIDAD
+----------------
+Gestiona el tiempo global de la partida y emite actualizaciones del tiempo.
+
+SEÑALES
+-------
+time_changed(time: float)
+
+FUNCIONES
+---------
+_process(delta: float)
+----------------------------------------
+Ejecuta procesamiento continuo en cada frame.
+
+start()
+----------------------------------------
+Inicia el temporizador.
+
+stop()
+----------------------------------------
+Detiene el temporizador.
+
+reset()
+----------------------------------------
+Reinicia el temporizador.
+
+get_time()
+----------------------------------------
+Devuelve el tiempo transcurrido.
+
+OBSERVACIONES
+-------------

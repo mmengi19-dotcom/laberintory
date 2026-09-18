@@ -1,0 +1,24 @@
+=======================================================
+TeleportItem.gd
+=======================================================
+
+UBICACIÓN
+---------
+laberinto/scripts/Gameplay/TeleportItem.gd
+
+RESPONSABILIDAD
+----------------
+Gestiona la lógica correspondiente a este componente.
+
+FUNCIONES
+---------
+_ready()
+----------------------------------------
+Inicializa el componente y realiza las conexiones o configuraciones iniciales.
+
+_process(delta: float)
+----------------------------------------
+Ejecuta procesamiento continuo en cada frame.
+
+OBSERVACIONES
+-------------

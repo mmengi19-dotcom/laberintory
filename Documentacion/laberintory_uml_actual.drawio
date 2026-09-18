@@ -1,0 +1,117 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="W2Hm9Akm34EQGKqVbtEm" name="Página-1">
+    <mxGraphModel dx="3334" dy="1862" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GM" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;" value="GameManager&lt;br&gt;&lt;hr&gt;&lt;b&gt;State&lt;/b&gt;&lt;br&gt;current_state: GameState&lt;br&gt;current_level: int&lt;br&gt;&lt;br&gt;&lt;b&gt;Signals&lt;/b&gt;&lt;br&gt;state_changed(new_state)&lt;br&gt;level_changed(new_level)&lt;br&gt;&lt;br&gt;&lt;b&gt;Methods&lt;/b&gt;&lt;br&gt;start_game()&lt;br&gt;change_state(new_state)&lt;br&gt;set_level(new_level)&lt;br&gt;next_level()" vertex="1">
+          <mxGeometry height="260" width="310" x="-410" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GOAL" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;" value="Goal : Area2D&lt;br&gt;&lt;hr&gt;&lt;b&gt;Signal&lt;/b&gt;&lt;br&gt;level_completed&lt;br&gt;&lt;br&gt;&lt;b&gt;Method&lt;/b&gt;&lt;br&gt;_on_body_entered(body)" vertex="1">
+          <mxGeometry height="170" width="280" x="1060" y="-170" as="geometry" />
+        </mxCell>
+        <mxCell id="UI" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;whiteSpace=wrap;fillColor=#fff2cc;" value="UI : CanvasLayer&lt;br&gt;&lt;hr&gt;&lt;b&gt;References&lt;/b&gt;&lt;br&gt;Pause / Resume / Main Menu&lt;br&gt;LevelLabel&lt;br&gt;TimerLabel&lt;br&gt;&lt;br&gt;&lt;b&gt;Methods&lt;/b&gt;&lt;br&gt;_ready()&lt;br&gt;_on_pause_pressed()&lt;br&gt;_on_resume_pressed()&lt;br&gt;_on_main_menu_pressed()&lt;br&gt;_on_level_changed(new_level)" vertex="1">
+          <mxGeometry height="290" width="330" x="1340" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="TIMER" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;whiteSpace=wrap;fillColor=#e1d5e7;" value="TimerLabel : Label&lt;br&gt;&lt;hr&gt;&lt;b&gt;State&lt;/b&gt;&lt;br&gt;time: float&lt;br&gt;running: bool&lt;br&gt;&lt;br&gt;&lt;b&gt;Methods&lt;/b&gt;&lt;br&gt;_process(delta)&lt;br&gt;start_timer()&lt;br&gt;stop_timer()&lt;br&gt;reset_timer()&lt;br&gt;get_time()&lt;br&gt;update_display()" vertex="1">
+          <mxGeometry height="250" width="310" x="-460" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="BALL" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;" value="Ball : RigidBody2D&lt;br&gt;&lt;hr&gt;Player / física&lt;br&gt;reset_to_start(start_pos)&lt;br&gt;Camera2D (child)" vertex="1">
+          <mxGeometry height="130" width="310" x="60" y="1480" as="geometry" />
+        </mxCell>
+        <mxCell id="SCENE" parent="1" style="swimlane;fontStyle=1;startSize=28;rounded=0;html=1;whiteSpace=wrap;fillColor=#f5f5f5;" value="main.tscn&lt;br&gt;&lt;hr&gt;Main&lt;br&gt;├─ Ball&lt;br&gt;├─ Maze&lt;br&gt;├─ Goal&lt;br&gt;└─ UI&lt;br&gt;   ├─ BtnPause&lt;br&gt;   ├─ PauseMenu&lt;br&gt;   ├─ LevelLabel&lt;br&gt;   └─ TimerLabel" vertex="1">
+          <mxGeometry height="190" width="330" x="510" y="1660" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="AEbBgDRGdvm161RK1XES-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="GOAL" value="connects signal">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="820" y="-465" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="AEbBgDRGdvm161RK1XES-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="GM" value="calls next_level()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="-465" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="GOAL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=block;entryX=0.585;entryY=0.333;entryDx=0;entryDy=0;entryPerimeter=0;" target="AEbBgDRGdvm161RK1XES-8" value="level_completed">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="693.58" y="-85" />
+            </Array>
+            <mxPoint x="680.0588235294122" y="-370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="GM" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=block;" target="MAZE" value="level_changed">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="207.57" y="250" />
+              <mxPoint x="207.57" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="GM" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=block;" target="UI" value="level_changed">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1505" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="MAZE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;" target="BALL" value="positions / resets">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="215" y="450" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="MAZE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;" target="GOAL" value="positions">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="MAZE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;" target="TIMER" value="starts timer (current)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="182.57" y="370" />
+              <mxPoint x="182.57" y="580" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="UI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;" target="TIMER" value="contains / displays">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="595" y="655" />
+              <mxPoint x="595" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="MAZE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="AEbBgDRGdvm161RK1XES-7" value="root">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="-390" />
+              <mxPoint x="660" y="-390" />
+            </Array>
+            <mxPoint x="680" y="-370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TITLE" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;" value="&lt;b&gt;Labyrinthory — UML / Arquitectura actual&lt;/b&gt;&lt;br&gt;&lt;font style=&#39;font-size:11px&#39;&gt;Estado del proyecto después del refactor Goal → GameManager&lt;/font&gt;" vertex="1">
+          <mxGeometry height="50" width="700" x="370" y="-810" as="geometry" />
+        </mxCell>
+        <mxCell id="AEbBgDRGdvm161RK1XES-1" edge="1" parent="1" source="SCENE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;" target="MAZE" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="1660" as="sourcePoint" />
+            <mxPoint x="700" y="-370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MAZE" parent="1" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=28;rounded=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;" value="Maze : TileMapLayer&lt;br&gt;&lt;hr&gt;&lt;b&gt;State&lt;/b&gt;&lt;br&gt;width, height&lt;br&gt;extraPath&lt;br&gt;&lt;br&gt;&lt;b&gt;Methods&lt;/b&gt;&lt;br&gt;_ready()&lt;br&gt;_on_level_changed(new_level)&lt;br&gt;generate_maze()&lt;br&gt;add_extra_paths(grid)&lt;br&gt;find_farthest_cell(grid,start)" vertex="1">
+          <mxGeometry height="290" width="330" x="515" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="AEbBgDRGdvm161RK1XES-6" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Classname" vertex="1">
+          <mxGeometry height="168" width="160" x="600" y="-570" as="geometry" />
+        </mxCell>
+        <mxCell id="AEbBgDRGdvm161RK1XES-7" parent="AEbBgDRGdvm161RK1XES-6" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;Main : Node2D&lt;/span&gt;&lt;br style=&quot;font-weight: 700; text-align: center;&quot;&gt;&lt;hr style=&quot;font-weight: 700; text-align: center;&quot;&gt;&lt;b style=&quot;text-align: center;&quot;&gt;References&lt;/b&gt;&lt;br style=&quot;font-weight: 700; text-align: center;&quot;&gt;&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;goal: Goal&lt;/span&gt;&lt;br style=&quot;font-weight: 700; text-align: center;&quot;&gt;&lt;br style=&quot;font-weight: 700; text-align: center;&quot;&gt;&lt;b style=&quot;text-align: center;&quot;&gt;Methods&lt;/b&gt;&lt;br style=&quot;font-weight: 700; text-align: center;&quot;&gt;&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;_ready()&lt;/span&gt;&lt;br style=&quot;font-weight: 700; text-align: center;&quot;&gt;&lt;span style=&quot;font-weight: 700; text-align: center;&quot;&gt;_on_level_completed()&lt;/span&gt;" vertex="1">
+          <mxGeometry height="134" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AEbBgDRGdvm161RK1XES-8" parent="AEbBgDRGdvm161RK1XES-6" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="160" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

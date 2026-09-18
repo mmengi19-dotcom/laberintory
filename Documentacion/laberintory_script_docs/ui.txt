@@ -1,0 +1,36 @@
+=======================================================
+ui.gd
+=======================================================
+
+UBICACIÓN
+---------
+laberinto/scripts/UI/ui.gd
+
+RESPONSABILIDAD
+----------------
+Gestiona la interfaz, pausa, navegación y actualización del nivel.
+
+FUNCIONES
+---------
+_ready()
+----------------------------------------
+Inicializa el componente y realiza las conexiones o configuraciones iniciales.
+
+_on_pause_pressed()
+----------------------------------------
+Gestiona la pulsación del botón de pausa.
+
+_on_resume_pressed()
+----------------------------------------
+Gestiona la reanudación de la partida.
+
+_on_main_menu_pressed()
+----------------------------------------
+Gestiona el regreso al menú principal.
+
+_on_level_changed(new_level)
+----------------------------------------
+Reacciona cuando cambia el nivel.
+
+OBSERVACIONES
+-------------

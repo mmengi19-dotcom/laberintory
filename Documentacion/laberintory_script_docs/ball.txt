@@ -1,0 +1,33 @@
+=======================================================
+ball.gd
+=======================================================
+
+UBICACIÓN
+---------
+laberinto/scripts/ball.gd
+
+RESPONSABILIDAD
+----------------
+Gestiona el movimiento físico de la pelota mediante teclado y acelerómetro.
+
+FUNCIONES
+---------
+_ready()
+----------------------------------------
+Inicializa el componente y realiza las conexiones o configuraciones iniciales.
+
+_physics_process(_delta: float)
+----------------------------------------
+Ejecuta la lógica de movimiento/física en cada frame de físicas.
+
+reset_to_start(start_pos: Vector2)
+----------------------------------------
+Reposiciona la pelota y reinicia sus velocidades.
+
+_integrate_forces(state: PhysicsDirectBodyState2D)
+----------------------------------------
+Modifica el estado físico del cuerpo durante la simulación.
+
+OBSERVACIONES
+-------------
+Utiliza el acelerómetro del dispositivo móvil.

@@ -1,0 +1,50 @@
+=======================================================
+GameManager.gd
+=======================================================
+
+UBICACIÓN
+---------
+laberinto/scripts/Managers/GameManager.gd
+
+RESPONSABILIDAD
+----------------
+Gestiona el estado global de la partida, el nivel actual y las transiciones principales.
+
+SEÑALES
+-------
+state_changed(new_state)
+level_changed(new_level)
+
+FUNCIONES
+---------
+start_game()
+----------------------------------------
+Inicia una nueva partida.
+
+change_state(new_state: GameState)
+----------------------------------------
+Cambia el estado global del juego.
+
+set_level(new_level: int)
+----------------------------------------
+Establece el nivel actual y notifica el cambio.
+
+next_level()
+----------------------------------------
+Avanza al siguiente nivel.
+
+pause_game()
+----------------------------------------
+Pausa la partida.
+
+resume_game()
+----------------------------------------
+Reanuda la partida.
+
+return_to_menu()
+----------------------------------------
+Detiene la partida actual y vuelve al menú principal.
+
+OBSERVACIONES
+-------------
+Se relaciona con el temporizador global GameTimer.

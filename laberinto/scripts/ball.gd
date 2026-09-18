@@ -1,6 +1,7 @@
 extends RigidBody2D
 
-@export var tilt_force: float = 2500.0
+@export var tilt_force: float = 1500
+
 @export var deadzone: float = 0.4
 
 func _ready() -> void:

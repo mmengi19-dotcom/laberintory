@@ -1,0 +1,37 @@
+=======================================================
+maze.gd
+=======================================================
+
+UBICACIÓN
+---------
+laberinto/scripts/Maze/maze.gd
+
+RESPONSABILIDAD
+----------------
+Genera el laberinto, adapta sus dimensiones por nivel y coloca sus elementos.
+
+FUNCIONES
+---------
+_ready()
+----------------------------------------
+Inicializa el componente y realiza las conexiones o configuraciones iniciales.
+
+_on_level_changed(new_level: int)
+----------------------------------------
+Reacciona cuando cambia el nivel.
+
+add_extra_paths(grid)
+----------------------------------------
+Agrega caminos adicionales al laberinto.
+
+find_farthest_cell(grid, start)
+----------------------------------------
+Busca la celda de camino más alejada de la posición inicial.
+
+generate_maze()
+----------------------------------------
+Genera o regenera el laberinto y actualiza los elementos asociados.
+
+OBSERVACIONES
+-------------
+Trabaja con el TileMapLayer del laberinto.
