@@ -28,8 +28,7 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_0ld40")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmc68"]
-size = Vector2(64, 64)
+[sub_resource type="CircleShape2D" id="CircleShape2D_trceg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jkv2x"]
 load_path = "res://.godot/imported/Pruebafondo4.jpg-ce279e058c877fc68f1c21adec60e859.ctex"
@@ -71,7 +70,7 @@ script = ExtResource("5_choun")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" unique_id=97772169]
-shape = SubResource("RectangleShape2D_tmc68")
+shape = SubResource("CircleShape2D_trceg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Goal" unique_id=391070800]
 texture = ExtResource("5_jkv2x")
