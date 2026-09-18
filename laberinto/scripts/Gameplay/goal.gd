@@ -7,7 +7,6 @@ signal level_completed
 
 func _ready() -> void:
 	GameManager.level_changed.connect(func(_lvl): update_visual_state())
-	body_entered.connect(_on_body_entered)
 	GameManager.key_collected.connect(_on_key_collected)
 	update_visual_state()
 

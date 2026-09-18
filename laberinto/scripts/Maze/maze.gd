@@ -152,11 +152,11 @@ func generate_maze():
 		extraPath = MAX_PATH
 	else:
 		var level = GameManager.current_level
-		var growth = int((level - 1) / 4) * 2
+		var growth = int(float(level - 1) / 4) * 2
 		width = mini(BASE_WIDTH + growth, MAX_WIDTH)
 		height = mini(BASE_HEIGHT + growth, MAX_HEIGHT)
 
-		var growthExtraPath = int((level - 1) / 4) * 4
+		var growthExtraPath = int(float(level - 1) / 4) * 4
 		extraPath = mini(9 + growthExtraPath, MAX_PATH)
 
 	print("Modo: ", GameManager.current_mode, " | Dimensiones: %dx%d | Pasillos: %d" % [width, height, extraPath])

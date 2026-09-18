@@ -9,7 +9,7 @@ func _ready():
 
 
 func _on_time_changed(new_time: float):
-	var minutes = int(new_time) / 60
+	var minutes = float(new_time) / 60
 	var seconds = int(new_time) % 60
 	var centiseconds = int(new_time * 100) % 100
 
